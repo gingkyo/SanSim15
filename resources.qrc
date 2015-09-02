@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Robot.png</file>
+        <file>blue.png</file>
+        <file>green.png</file>
+        <file>red.png</file>
+        <file>yellow.png</file>
+        <file>beige.png</file>
+        <file>lime.png</file>
+    </qresource>
+</RCC>
