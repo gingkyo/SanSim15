@@ -3,7 +3,7 @@
 #include <QGraphicsWidget>
 #include <QPainter>
 #include <QGraphicsSceneMouseEvent>
-
+#include "counterscene.h"
 
 class GraphicsWidget :public QGraphicsWidget {
     Q_OBJECT
@@ -19,7 +19,7 @@ public:
     ~GraphicsWidget(){
     }
 signals:
-     void getNewFood(QString name,int x,int y);
+     void getNewFood(QString,int,int);
 };
 
 #endif // GRAPHICSWIDGET_H

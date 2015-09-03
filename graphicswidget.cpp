@@ -14,6 +14,8 @@ void GraphicsWidget::paint(QPainter *painter,
 }
 void GraphicsWidget::mousePressEvent(QGraphicsSceneMouseEvent *event){
     emit getNewFood(this->name,event->scenePos().x(),event->scenePos().y());
+    CounterScene* widget = qobject_cast<CounterScene *>(scene);
+    widget->setIsPressed(true);
 }
 QRectF GraphicsWidget:: boundingRect() const{
     return QRectF(0,0,pm.width(),pm.height());

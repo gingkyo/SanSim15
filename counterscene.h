@@ -10,9 +10,9 @@
 class CounterScene :public QGraphicsScene {
     Q_OBJECT
 private:
-    GraphicsWidget* gameItem;
+    QGraphicsWidget* gameItem;
     GamesManager* gamesManager;
-    QVector<GraphicsWidget*> counterItems;
+    QVector<QGraphicsWidget*> counterItems;
     bool isPressed=false;
     bool isValid=false;
 
@@ -22,10 +22,11 @@ public:
     void buildCounter(GamesManager* gameLoader,int counterType);
     void buildItemList();
     //    void mousePressEvent(QGraphicsSceneMouseEvent *event)
+    void setIsPressed(bool value);
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 public slots:
-    void setGraphicsWidget(QString widgetName, int x, int y);
+    void setGraphicsWidget(QString,int,int);
 };
 
 #endif // COUNTERSCENE_H

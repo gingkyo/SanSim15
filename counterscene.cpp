@@ -30,10 +30,13 @@ void CounterScene::buildCounter(GamesManager* gameLoader,int counterType){
         foodItem=new GraphicsWidget(name+".png",this->width()/tileSize,100,this);
         layout->addItem(foodItem);
         counterItems.append(foodItem);
-        connect(foodItem,SIGNAL(getNewFood(QString name,int,int)),this,SLOT(setGraphicsWidget(QString widgetName,int,int)));
+        connect(foodItem,SIGNAL(getNewFood(QString,int,int)),this,SLOT(setGraphicsWidget(QString,int,int)));
     }
     gameItem->setLayout(layout);
     this->addItem(gameItem);
+}
+void CounterScene:: setIsPressed(bool value){
+    isPressed=value;
 }
 void CounterScene::buildItemList(){
 
@@ -63,13 +66,12 @@ void CounterScene::buildItemList(){
 //        }
 //    }
 void CounterScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event){
-    if(isPressed&& isValid){
+    if(isPressed){
         gameItem->setPos(QPoint(event->scenePos().x(),event->scenePos().y()));
     }
 }
 void CounterScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event){
     isPressed=false;
-    isValid=false;
     int y=event->scenePos().y();
     if(y>=(this->height()/4)*3|y<=height()/4)
         delete(gameItem);
