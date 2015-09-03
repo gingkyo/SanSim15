@@ -13,9 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    counterscene.cpp \
+    customgraphicsview.cpp \
+    graphicswidget.cpp \
+    gamesmanager.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    counterscene.h \
+    customgraphicsview.h \
+    graphicswidget.h \
+    gamesmanager.h
 
 FORMS    += mainwindow.ui
 
